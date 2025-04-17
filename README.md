@@ -73,6 +73,14 @@ WHERE `length` > (SELECT avg(`length`)FROM film) ;
 <details>
 <summary>Ответ</summary>
 
+```
+SELECT DATE_FORMAT(p.payment_date, '%Y-%M') AS Дата , (sum(p.amount )) AS Сумма , count((p.rental_id )) AS Аренд
+FROM payment p 
+GROUP BY Дата
+ORDER BY Сумма DESC
+LIMIT 1;
+```
+
 ![image](img/03.png)
 
 </details>
