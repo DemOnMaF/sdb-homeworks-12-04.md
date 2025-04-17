@@ -56,6 +56,12 @@ HAVING Количество > 300;
 <details>
 <summary>Ответ</summary>
 
+```
+SELECT  count(`length`) 
+FROM film 
+WHERE `length` > (SELECT avg(`length`)FROM film) ;
+```
+
 ![image](img/02.png)
 
 </details>
